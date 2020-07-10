@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Remedic Labs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/static/css/aos.css">
+
+    <link rel="stylesheet" href="/static/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="/static/css/flaticon.css">
+    <link rel="stylesheet" href="/static/css/icomoon.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="departments.html" class="nav-link">Departments</a></li>
+          <li class="nav-item"><a href="doctor.html" class="nav-link">Doctors</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalAppointment"><span>Make an Appointment</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!-- END nav -->
+    
+    <div class="hero-wrap" style="background-image: url('/static/images/bg_1.jpg'); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <h1 class="mb-4">The most valuable thing is your Health</h1>
+            <p>We care about your health Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-cardiogram"></span> Cardiology</a>
+
+              <a class="nav-link px-4" id="v-pills-buffet-tab" data-toggle="pill" href="#v-pills-buffet" role="tab" aria-controls="v-pills-buffet" aria-selected="false"><span class="mr-3 flaticon-neurology"></span> Neurology</a>
+
+              <a class="nav-link px-4" id="v-pills-fitness-tab" data-toggle="pill" href="#v-pills-fitness" role="tab" aria-controls="v-pills-fitness" aria-selected="false"><span class="mr-3 flaticon-stethoscope"></span> Diagnostic</a>
+
+              <a class="nav-link px-4" id="v-pills-reception-tab" data-toggle="pill" href="#v-pills-reception" role="tab" aria-controls="v-pills-reception" aria-selected="false"><span class="mr-3 flaticon-tooth"></span> Dental</a>
+
+              <a class="nav-link px-4" id="v-pills-sea-tab" data-toggle="pill" href="#v-pills-sea" role="tab" aria-controls="v-pills-sea" aria-selected="false"><span class="mr-3 flaticon-vision"></span> Ophthalmology</a>
+
+              <a class="nav-link px-4" id="v-pills-spa-tab" data-toggle="pill" href="#v-pills-spa" role="tab" aria-controls="v-pills-spa" aria-selected="false"><span class="mr-3 flaticon-ambulance"></span> Emergency</a>
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+            
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
+                <span class="icon mb-3 d-block flaticon-cardiogram"></span>
+                <h2 class="mb-4">Cardiology Department</h2>
+                <h2 class="mb-4">{{ prediction_text }}</h2>
+                        <form action="{{ url_for('predict')}}" method="post" autocomplete="off">
+                          
+                          <div class="row">
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" name="age" placeholder="Enter Age" class="form-control" required="required">
+                              </div>    
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                		<select class="form-control" name="sex" required="required">
+											<option value="" disabled selected hidden>Select Gender</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                		<select class="form-control" name="chest_pain_type" required="required">
+											<option value="" disabled selected hidden>Select Chest Pain Type</option>
+											<option value="asymptomatic">Asymptomatic</option>
+											<option value="typical-angina">Typical Angina</option>
+											<option value="atypical-angina">Atypical Angina</option>
+											<option value="non-anginal-pain">Non-anginal pain</option>
+										</select>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" name="resting_blood_pressure" placeholder="Enter Resting Blood Pressure" class="form-control" required="required">
+                              </div>
+                            </div>
+                            
+                          </div>
+                          
+                          <div class="row">
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" name="cholesterol" placeholder="Enter Cholesterol (in mg/dl)" class="form-control" required="required">
+                              </div>    
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                		<select class="form-control" name="fasting_blood_sugar" required="required">
+											<option value="" disabled selected hidden>Select Fasting Blood Sugar</option>
+											<option value="greater-than-120">Greater than 120mg/dl</option>
+											<option value="less-than-120">Less than 120mg/dl</option>
+										</select>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                        <select class="form-control" name="rest_ecg" required="required">
+											<option value="" disabled selected hidden>Select Resting ECG Results</option>
+											<option value="normal">Normal</option>
+											<option value="wave-abnormality">Wave Abnormality</option>
+											<option value="left-ventricular-hyperthrophy">Left Ventricular Hyperthrophy</option>
+										</select>
+                              </div>    
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" name="max_heart_rate_achieved" placeholder="Enter Max heart rate (in bpm)" class="form-control" required="required">
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                        <select class="form-control" name="exercise_induced_angina" required="required">
+											<option value="" disabled selected hidden>Exercise induced angina?</option>
+											<option value="yes">Yes</option>
+											<option value="no">No</option>
+										</select>
+                              </div>    
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" name="st_depression" placeholder="Enter ST depression results" class="form-control" required="required">
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                        <select class="form-control" name="st_slope" required="required">
+											<option value="" disabled selected hidden>Peak exercise ST segment</option>
+											<option value="upsloping">Upsloping</option>
+											<option value="flat">Flat</option>
+											<option value="downsloping">Downsloping</option>
+										</select>
+                              </div>    
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                        <select class="form-control" name="num_major_vessels" required="required">
+											<option value="" disabled selected hidden>Number of major vessels</option>
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+                              </div>    
+                            </div>
+                            
+                          </div>
+                          
+                          <div class="form-group">
+                                    <select class="form-control" name="thalassemia" required="required">
+											<option value="" disabled selected hidden>Thalassemia level</option>
+											<option value="normal">Normal</option>
+											<option value="fixed-defect">Fixed defect</option>
+											<option value="reversible-defect">Reversible defect</option>
+										</select>
+                          </div>
+                                                  
+                          <div class="form-group">
+                            <input type="submit" value="Get Test Results" class="btn btn-primary">
+                          </div>
+                        </form>
+                    </div>
+                
+              <div class="tab-pane fade py-5" id="v-pills-buffet" role="tabpanel" aria-labelledby="v-pills-buffet-tab">
+                <span class="icon mb-3 d-block flaticon-neurology"></span>
+                <h2 class="mb-4">Neurogoly Department</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-fitness" role="tabpanel" aria-labelledby="v-pills-fitness-tab">
+                <span class="icon mb-3 d-block flaticon-stethoscope"></span>
+                <h2 class="mb-4">Diagnostic Department</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-reception" role="tabpanel" aria-labelledby="v-pills-reception-tab">
+                <span class="icon mb-3 d-block flaticon-tooth"></span>
+                <h2 class="mb-4">Dental Departments</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-sea" role="tabpanel" aria-labelledby="v-pills-sea-tab">
+                <span class="icon mb-3 d-block flaticon-vision"></span>
+                <h2 class="mb-4">Ophthalmology Departments</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-spa" role="tabpanel" aria-labelledby="v-pills-spa-tab">
+                <span class="icon mb-3 d-block flaticon-ambulance"></span>
+                <h2 class="mb-4">Emergency Departments</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+    <div class="modal fade" id="modalAppointment" tabindex="-1" role="dialog" aria-labelledby="modalAppointmentLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAppointmentLabel">Patient Test Results</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 class="mb-4">{{ prediction_text }}</h2>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/js/aos.js"></script>
+  <script src="/static/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/js/bootstrap-datepicker.js"></script>
+  <script src="/static/js/jquery.timepicker.min.js"></script>
+  <script src="/static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/static/js/google-map.js"></script>
+  <script src="/static/js/main.js"></script>
+    
+  </body>
+</html>
